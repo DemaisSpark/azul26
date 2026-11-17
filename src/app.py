@@ -35,6 +35,35 @@ BODY = '''
             width: 40px;
             height: 40px;
             border-radius: 4px;
+            flex: none;
+        }
+        .grupos-ladrilhos {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+        }
+        .por-modelo {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            gap: 16px;
+            flex: 1 0 280px;
+            padding: 16px;
+            border-right: 2px solid #ccc;
+        }
+        .coluna-ladrilhos {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .por-parede {
+            display: grid;
+            grid-template-columns: repeat(5, 40px);
+            gap: 16px;
+            align-content: end;
+            justify-content: center;
+            flex: 1 0 280px;
+            padding: 16px;
         }
         /* Fundo da mesa para contraste */
         body {
