@@ -18,16 +18,45 @@ Changelog
 """
 from browser import document, html
 
+class PorLadrilhos:
+    def __init__(self, tabuleiro):
+        ladrilhos = "column is-half is-flex is-flex-direction-column is-align-items-flex-end pr-5"
+        ladrilhos_style = "border-right: 2px solid #ccc;"
+        dentro = html.DIV(self.dentro(), Class="columns is-vcentered is-mobile")
+        self.base = html.DIV(dentro, Class=ladrilhos, style=ladrilhos_style)
+
+    def dentro(self):
+        def ladrilhos():
+            ld = html.DIV(Class="box p-0 m-1 has-background-white tile-slot")
+            return html.DIV(ld, Class ="is-flex mb-2")
+        bxs = [ladrilhos() for _ in range(4)]
+        ass = "column is-third is-flex is-flex-direction-column is-align-items-flex-end pr-5"
+        style = "border-right: 2px solid #ccc;"
+        bxs = html.DIV(bxs, Class=ass, style=style)
+        return bxs
+    def monta(self):
+        return self.base
+
 
 class AzulGUI:
     document = document
     html = html
 
+
+    def monta(self):
+        tabuleiro = self.document.body
+        part = PorLadrilhos(tabuleiro).monta()
+        part2 = PorLadrilhos(tabuleiro).monta()
+        part3 = PorLadrilhos(tabuleiro).monta()
+        style = "border-right: 2px solid #ccc;"
+        tabu_box = html.DIV([part, part2, part3], Class="columns is-vcentered is-mobile", style=style)
+        tabu_box = html.DIV(tabu_box, Class="container", style="max-width: 850px;")
+        tabuleiro <= tabu_box
+        print("tabuleiro")
+
+
 def azul(br):
-    tabuleiro = br.document.body
-    tabu_box = br.html.DIV(Class="box has-background-white-ter p-5", style="border: 4px solid #2c3e50;")
-    tabuleiro <= tabu_box
-    print("tabuleiro")
+    br().monta()
 
 if __name__ == "__main__":
     azul(AzulGUI)

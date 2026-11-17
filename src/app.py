@@ -26,9 +26,9 @@ BODY = '''
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Azul</title>
   <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-  <script src="/libbr/brython.js"> </script>
-  <script src="/libbr/brython_stdlib.js"> </script>
-  <style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.15.0/brython.min.js" integrity="sha512-G0CChqkpHKCjVgLM0se6TLfQ0fqmoFqvr5XCONxzF2GoiQmStnd76lKmMLGo/g32mzP3qmIPalp4z+qICfAPYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.15.0/brython_stdlib.min.js" integrity="sha512-vUqnWPo3+2xMHld57vH6JZjWcUEAofzKGs4egBxZdPMC+IPyRrwe3usgCdmV3jP1xaEENJnou/M0EnP5npDuig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <style>
     .bottle-svg { width: 120px; height: auto; }
         /* Único CSS customizado: garantir que os ladrilhos sejam quadrados perfeitos */
         .tile-slot {
@@ -45,7 +45,7 @@ BODY = '''
   </style>
 </head>
 <body>
-<brython-options debug="1" pythonpath="/"></brython-options>
+<brython-options debug="1" pythonpath="/ libbr"></brython-options>
 <script type="text/python" src="gui.py">
 </script>
 </body>
